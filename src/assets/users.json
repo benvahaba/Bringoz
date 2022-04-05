@@ -1,0 +1,134 @@
+[
+  {
+    "name": "James Smith",
+    "phone": "1-541-754-0000",
+    "email": "james@bringoz.com",
+    "location": {
+      "lat": 33.96842,
+      "lng": -118.222225
+    },
+    "tasks": [
+      {
+        "id": "james-task-1",
+        "location": {
+          "lat": 34.095885,
+          "lng": -118.220851
+        }
+      },
+      {
+        "id": "james-task-2",
+        "location": {
+          "lat": 34.048108,
+          "lng": -118.034084
+        }
+      },
+      {
+        "id": "james-task-3",
+        "location": {
+          "lat": 33.938803,
+          "lng": -118.3623
+        }
+      }
+    ]
+  },
+  {
+    "name": "Maria Garcia",
+    "phone": "1-541-754-0001",
+    "email": "maria@bringoz.com",
+    "location": {
+      "lat": 33.939372,
+      "lng": -118.344587
+    },
+    "tasks": [
+      {
+        "id": "maria-task-1",
+        "location": {
+          "lat": 33.92399,
+          "lng": -117.939327
+        }
+      },
+      {
+        "id": "maria-task-2",
+        "location": {
+          "lat": 33.921711,
+          "lng": -118.038204
+        }
+      }
+    ]
+  },
+  {
+    "name": "David Cohen",
+    "phone": "1-541-754-0002",
+    "email": "david@bringoz.com",
+    "location": {
+      "lat": 33.96842,
+      "lng": -118.222225
+    },
+    "tasks": [
+      {
+        "id": "david-task-1",
+        "location": {
+          "lat": 33.824794,
+          "lng": -118.26205
+        }
+      }
+    ]
+  },
+  {
+    "name": "John William",
+    "phone": "1-541-754-0003",
+    "email": "john@bringoz.com",
+    "location": {
+      "lat": 33.900057,
+      "lng": -117.935207
+    },
+    "tasks": [
+      {
+        "id": "john-task-1",
+        "location": {
+          "lat": 33.838483,
+          "lng": -117.95718
+        }
+      },
+      {
+        "id": "john-task-2",
+        "location": {
+          "lat": 33.85331,
+          "lng": -118.222225
+        }
+      },
+      {
+        "id": "john-task-3",
+        "location": {
+          "lat": 33.829357,
+          "lng": -118.084896
+        }
+      }
+    ]
+  },
+  {
+    "name": "Daniel Taylor",
+    "phone": "1-541-754-0004",
+    "email": "daniel@bringoz.com",
+    "location": {
+      "lat": 34.186814,
+      "lng": -118.279903
+    },
+    "tasks": [
+      {
+        "id": "daniel-task-1",
+        "location": {
+          "lat": 33.754031,
+          "lng": -118.021724
+        }
+      },
+      {
+        "id": "daniel-task-2",
+        "location": {
+          "lat": 33.736903,
+          "lng": -117.82809
+        }
+      }
+    ]
+  }
+]
