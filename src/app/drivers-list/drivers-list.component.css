@@ -1,0 +1,14 @@
+.logo {
+  height: fit-content;
+  padding: 2rem;
+}
+
+.of-style--none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.of-style--none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

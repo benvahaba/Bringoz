@@ -1,5 +1,7 @@
 [
   {
+    "id": "1",
+    "imgUrl": "./assets/driver-images/driver1.jpg",
     "name": "James Smith",
     "phone": "1-541-754-0000",
     "email": "james@bringoz.com",
@@ -32,6 +34,8 @@
     ]
   },
   {
+    "id": "2",
+    "imgUrl": "./assets/driver-images/driver2.jpg",
     "name": "Maria Garcia",
     "phone": "1-541-754-0001",
     "email": "maria@bringoz.com",
@@ -57,6 +61,8 @@
     ]
   },
   {
+    "id": "3",
+    "imgUrl": "./assets/driver-images/driver3.jpg",
     "name": "David Cohen",
     "phone": "1-541-754-0002",
     "email": "david@bringoz.com",
@@ -75,6 +81,8 @@
     ]
   },
   {
+    "id": "4",
+    "imgUrl": "./assets/driver-images/driver4.jpg",
     "name": "John William",
     "phone": "1-541-754-0003",
     "email": "john@bringoz.com",
@@ -107,6 +115,62 @@
     ]
   },
   {
+    "id": "5",
+    "imgUrl": "./assets/driver-images/driver5.jpg",
+    "name": "Daniel Taylor",
+    "phone": "1-541-754-0004",
+    "email": "daniel@bringoz.com",
+    "location": {
+      "lat": 34.186814,
+      "lng": -118.279903
+    },
+    "tasks": [
+      {
+        "id": "daniel-task-1",
+        "location": {
+          "lat": 33.754031,
+          "lng": -118.021724
+        }
+      },
+      {
+        "id": "daniel-task-2",
+        "location": {
+          "lat": 33.736903,
+          "lng": -117.82809
+        }
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "imgUrl": "./assets/driver-images/driver5.jpg",
+    "name": "Daniel Taylor",
+    "phone": "1-541-754-0004",
+    "email": "daniel@bringoz.com",
+    "location": {
+      "lat": 34.186814,
+      "lng": -118.279903
+    },
+    "tasks": [
+      {
+        "id": "daniel-task-1",
+        "location": {
+          "lat": 33.754031,
+          "lng": -118.021724
+        }
+      },
+      {
+        "id": "daniel-task-2",
+        "location": {
+          "lat": 33.736903,
+          "lng": -117.82809
+        }
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "imgUrl": "./assets/driver-images/driver5.jpg",
     "name": "Daniel Taylor",
     "phone": "1-541-754-0004",
     "email": "daniel@bringoz.com",

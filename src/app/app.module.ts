@@ -9,10 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import DatabaseService from './services/database.service';
 import DriversService from './services/drivers.service';
+import { FormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
-  declarations: [AppComponent, DriversListComponent, DriversCardComponent],
+  declarations: [AppComponent, DriversListComponent, DriversCardComponent, MapComponent],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     AgmCoreModule.forRoot({

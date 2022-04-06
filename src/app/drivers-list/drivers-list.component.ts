@@ -9,16 +9,19 @@ import DriversService from '../services/drivers.service';
   styleUrls: ['./drivers-list.component.css'],
 })
 export class DriversListComponent implements OnInit {
-  private driversList: Driver[];
+  driversList: Driver[];
   constructor(private driversService: DriversService) {
     this.driversList = [];
   }
 
   ngOnInit(): void {
-    this.driversService.onNewDriversFetched.subscribe(
-      (driversListFromEvent) => {
-        this.driversList = driversListFromEvent;
-      }
-    );
+    this.driversService.driversChanged.subscribe((driversFromService) => {
+      this.driversList = driversFromService;
+    });
+  }
+  onCardDelete(driverInfo: { driverId: string; driverName: string }) {
+    if (confirm(`Are you sure to delete ${driverInfo.driverName}`)) {
+      this.driversService.deleteDriverById(driverInfo.driverId);
+    }
   }
 }

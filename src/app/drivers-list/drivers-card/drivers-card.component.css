@@ -1,0 +1,25 @@
+.card__border--left {
+  border-left: 0.5rem solid rgb(231, 87, 89);
+}
+
+.card--img {
+  width: 10rem;
+  height: 10rem;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.icon--task {
+  content: url(/assets/markers/map-marker-task.png);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+.icon--driver {
+  content: url(/assets/markers/map-marker-driver.png);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+.driver-card:focus {
+}

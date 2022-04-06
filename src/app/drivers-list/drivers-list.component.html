@@ -1,5 +1,15 @@
-<div class="bg-dark h-100 m-0 p-0 list-group list-group-flush">
-  <app-drivers-card class="bg-info"></app-drivers-card>
-  <app-drivers-card class="bg-info"></app-drivers-card>
-  <app-drivers-card class="bg-info"></app-drivers-card>
+<div class="d-flex flex-column h-100 bg-white">
+  <img class="logo" src="./assets/logo/Logo_black@2x 2.png" alt="logo" />
+  <div class="of-style--none h-100 overflow-auto">
+    <div class="" *ngFor="let driver of driversList">
+      <app-drivers-card
+        driverName="{{ driver.name }}"
+        imgUrl="{{ driver.imgUrl }}"
+        phone="{{ driver.phone }}"
+        tasksNum="{{ driver.tasks.length }}"
+        driverId="{{ driver.id }}"
+        (delete)="onCardDelete($event)"
+      ></app-drivers-card>
+    </div>
+  </div>
 </div>

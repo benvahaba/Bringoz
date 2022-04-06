@@ -1,0 +1,22 @@
+<agm-map
+  class="h-100 w-100"
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoomLevel"
+  [streetViewControl]="false"
+>
+  <agm-marker
+    *ngIf="driverIsFocused"
+    [latitude]="lat"
+    [longitude]="lng"
+    [iconUrl]="'./assets/markers/map-marker-driver.png'"
+  >
+    <agm-marker
+      *ngFor="let task of tasks"
+      [latitude]="task.location.lat"
+      [longitude]="task.location.lng"
+      [iconUrl]="'./assets/markers/map-marker-task.png'"
+    >
+    </agm-marker>
+  </agm-marker>
+</agm-map>
