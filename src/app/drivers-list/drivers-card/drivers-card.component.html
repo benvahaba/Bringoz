@@ -43,7 +43,11 @@
     class="cursor-pointer d-flex flex-row align-items-center"
     (click)="onDriverClicked()"
   >
-    <img class="card-img card--img" src="{{ imgUrl }}" alt="{{ driverName }}" />
+    <img
+      class="card-img card--img rounded-circle"
+      src="{{ imgUrl }}"
+      alt="{{ driverName }}"
+    />
     <div class="card-body d-flex">
       <div class="text-nowrap justify-content-between">
         <div class="d-flex flex-row">
