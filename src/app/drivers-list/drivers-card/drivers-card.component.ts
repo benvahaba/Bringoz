@@ -1,9 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { Driver } from 'src/app/models/driver.model';
 import DriversService from 'src/app/services/drivers.service';
-import { DriverUpdate } from 'src/app/models/updatedDriver.model';
+
 @Component({
   selector: 'app-drivers-card',
   templateUrl: './drivers-card.component.html',

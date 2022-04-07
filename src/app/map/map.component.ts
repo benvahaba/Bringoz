@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Driver } from '../models/driver.model';
 import DriversService from '../services/drivers.service';
-import { Task } from '../models/Task.model';
 import { Location } from '../models/Location.model';
 
 @Component({
