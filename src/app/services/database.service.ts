@@ -5,11 +5,11 @@ import { Driver } from '../models/driver.model';
 
 @Injectable({ providedIn: 'root' })
 export default class DatabaseService {
-  URL: string = './assets/users.json';
+  readonly URL: string = './assets/users.json';
 
   constructor(private http: HttpClient) {}
 
-  fetchDrivers() {
+  public fetchDrivers() {
     return this.http.get<Driver[]>(this.URL);
   }
 }

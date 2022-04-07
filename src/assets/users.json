@@ -140,59 +140,5 @@
         }
       }
     ]
-  },
-  {
-    "id": "6",
-    "imgUrl": "./assets/driver-images/driver5.jpg",
-    "name": "Daniel Taylor",
-    "phone": "1-541-754-0004",
-    "email": "daniel@bringoz.com",
-    "location": {
-      "lat": 34.186814,
-      "lng": -118.279903
-    },
-    "tasks": [
-      {
-        "id": "daniel-task-1",
-        "location": {
-          "lat": 33.754031,
-          "lng": -118.021724
-        }
-      },
-      {
-        "id": "daniel-task-2",
-        "location": {
-          "lat": 33.736903,
-          "lng": -117.82809
-        }
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "imgUrl": "./assets/driver-images/driver5.jpg",
-    "name": "Daniel Taylor",
-    "phone": "1-541-754-0004",
-    "email": "daniel@bringoz.com",
-    "location": {
-      "lat": 34.186814,
-      "lng": -118.279903
-    },
-    "tasks": [
-      {
-        "id": "daniel-task-1",
-        "location": {
-          "lat": 33.754031,
-          "lng": -118.021724
-        }
-      },
-      {
-        "id": "daniel-task-2",
-        "location": {
-          "lat": 33.736903,
-          "lng": -117.82809
-        }
-      }
-    ]
   }
 ]

@@ -4,6 +4,7 @@
 >
   <div class="d-flex justify-content-end">
     <button (click)="onCardEdite()" type="button" class="btn btn-sm">
+      <!-- yeah im not happy with that either -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -57,13 +58,31 @@
           <i class="icon--driver"></i>
 
           <input
-            formControlName="driverName"
+            formControlName="name"
             type="text"
             class="card-text"
             [ngClass]="{ uneditable: !isCardEditable }"
             [readonly]="!isCardEditable"
           />
         </div>
+        <span
+          *ngIf="
+            !editeDriverForm.get('name').valid &&
+            editeDriverForm.get('name').touched
+          "
+          class="help-block"
+        >
+          <span
+            class="text-danger"
+            *ngIf="editeDriverForm.get('name').errors['nameIsForbidden']"
+            >This name is invalid!</span
+          >
+          <span
+            class="text-danger"
+            *ngIf="editeDriverForm.get('name').errors['required']"
+            >This field is required!</span
+          >
+        </span>
 
         <div class="d-flex flex-row my-4">
           <i class="icon--task"> </i>
@@ -73,22 +92,60 @@
             <ng-template #oneTask> tasks </ng-template>
           </p>
         </div>
-        <span>Tel: </span>
-        <input
-          formControlName="driverPhone"
-          [readonly]="!isCardEditable"
-          [ngClass]="{ uneditable: !isCardEditable }"
-          class="card-text"
-        />
+        <div class="d-flex flex-row">
+          <span>Tel: </span>
+          <input
+            formControlName="phone"
+            [readonly]="!isCardEditable"
+            [ngClass]="{ uneditable: !isCardEditable }"
+            class="card-text"
+          />
+        </div>
+        <span
+          *ngIf="
+            !editeDriverForm.get('phone').valid &&
+            editeDriverForm.get('phone').touched
+          "
+          class="help-block"
+        >
+          <span
+            class="text-danger"
+            *ngIf="editeDriverForm.get('phone').errors['phoneIsForbidden']"
+            >This phone is invalid!</span
+          >
+          <span
+            class="text-danger"
+            *ngIf="editeDriverForm.get('phone').errors['required']"
+            >This field is required!</span
+          >
+        </span>
 
         <div *ngIf="isCardEditable" class="text-nowrap justify-content-between">
           <div class="d-flex flex-column justify-content-around mt-2">
             <div class="d-flex flex-row my-4">
               <span>Email:</span>
-              <input type="email" formControlName="driverEmail" />
+              <input type="email" formControlName="email" />
             </div>
+            <span
+              *ngIf="
+                !editeDriverForm.get('email').valid &&
+                editeDriverForm.get('email').touched
+              "
+              class="help-block"
+            >
+              <span
+                class="text-danger"
+                *ngIf="editeDriverForm.get('email').errors['email']"
+                >This email is invalid!</span
+              >
+              <span
+                class="text-danger"
+                *ngIf="editeDriverForm.get('phone').errors['required']"
+                >This field is required!</span
+              >
+            </span>
             <div
-              (click)="onFormSubmited()"
+              (click)="onDriverFormSubmited()"
               class="d-flex flex-row justify-content-around mt-4"
             >
               <button
