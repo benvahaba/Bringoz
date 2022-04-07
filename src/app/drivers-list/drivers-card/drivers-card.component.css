@@ -21,5 +21,9 @@
   height: 1.5rem;
   margin-right: 0.5rem;
 }
-.driver-card:focus {
+.uneditable {
+  border-style: none;
+}
+.uneditable:focus {
+  outline: none;
 }

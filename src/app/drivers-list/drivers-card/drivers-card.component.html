@@ -3,7 +3,7 @@
   [ngClass]="{ 'card__border--left': driverIsFocused }"
 >
   <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-sm">
+    <button (click)="onCardEdite()" type="button" class="btn btn-sm">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -45,26 +45,64 @@
   >
     <img
       class="card-img card--img rounded-circle"
-      src="{{ imgUrl }}"
-      alt="{{ driverName }}"
+      src="{{ i_imgUrl }}"
+      alt="{{ i_driverName }}"
     />
     <div class="card-body d-flex">
-      <div class="text-nowrap justify-content-between">
+      <form
+        [formGroup]="editeDriverForm"
+        class="text-nowrap justify-content-between"
+      >
         <div class="d-flex flex-row">
           <i class="icon--driver"></i>
-          <p class="card-text">{{ driverName }}</p>
+
+          <input
+            formControlName="driverName"
+            type="text"
+            class="card-text"
+            [ngClass]="{ uneditable: !isCardEditable }"
+            [readonly]="!isCardEditable"
+          />
         </div>
 
         <div class="d-flex flex-row my-4">
           <i class="icon--task"> </i>
           <p class="card-text">
-            {{ tasksNum }}
-            <span *ngIf="tasksNum == '1'; else oneTask">task</span>
+            {{ i_tasksNum }}
+            <span *ngIf="i_tasksNum == '1'; else oneTask">task</span>
             <ng-template #oneTask> tasks </ng-template>
           </p>
         </div>
-        <p class="card-text"><span>Tel: </span>{{ phone }}</p>
-      </div>
+        <span>Tel: </span>
+        <input
+          formControlName="driverPhone"
+          [readonly]="!isCardEditable"
+          [ngClass]="{ uneditable: !isCardEditable }"
+          class="card-text"
+        />
+
+        <div *ngIf="isCardEditable" class="text-nowrap justify-content-between">
+          <div class="d-flex flex-column justify-content-around mt-2">
+            <div class="d-flex flex-row my-4">
+              <span>Email:</span>
+              <input type="email" formControlName="driverEmail" />
+            </div>
+            <div
+              (click)="onFormSubmited()"
+              class="d-flex flex-row justify-content-around mt-4"
+            >
+              <button
+                [disabled]="!editeDriverForm.valid"
+                type="submit"
+                class="btn btn-primary"
+              >
+                Save
+              </button>
+              <button class="btn btn-danger">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

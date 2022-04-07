@@ -12,8 +12,6 @@ export default class DriversService {
   public chosenDriverChanged = new EventEmitter<Driver>();
 
   constructor(private databaseService: DatabaseService) {
-    console.log('driver service call');
-
     this.drivers = [];
     this.getDriversFromDB();
   }
@@ -45,7 +43,6 @@ export default class DriversService {
         ? (this.chosenDriver = this.drivers[0])
         : (this.chosenDriver = undefined);
     }
-    console.log('at chosen driver', this.chosenDriver);
 
     this.chosenDriverChanged.emit(this.chosenDriver);
   }

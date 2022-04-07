@@ -3,11 +3,12 @@
   <div class="of-style--none h-100 overflow-auto">
     <div class="" *ngFor="let driver of driversList">
       <app-drivers-card
-        driverName="{{ driver.name }}"
-        imgUrl="{{ driver.imgUrl }}"
-        phone="{{ driver.phone }}"
-        tasksNum="{{ driver.tasks.length }}"
-        driverId="{{ driver.id }}"
+        i_driverName="{{ driver.name }}"
+        i_imgUrl="{{ driver.imgUrl }}"
+        i_phone="{{ driver.phone }}"
+        i_tasksNum="{{ driver.tasks.length }}"
+        i_driverId="{{ driver.id }}"
+        i_email="{{ driver.email }}"
         (delete)="onCardDelete($event)"
       ></app-drivers-card>
     </div>
