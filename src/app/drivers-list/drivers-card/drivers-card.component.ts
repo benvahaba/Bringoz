@@ -18,13 +18,16 @@ export class DriversCardComponent implements OnInit {
     driverId: string;
   }>();
   driverIsFocused: boolean = false;
-  constructor(private driversService: DriversService) {}
+  constructor(private driversService: DriversService) {
+    console.log('at card const');
+  }
 
   ngOnInit(): void {
-    this.driversService.chosenDriverChanged.subscribe((driverFromService) => {
-      driverFromService.id === this.driverId
-        ? (this.driverIsFocused = true)
-        : (this.driverIsFocused = false);
+    //the driver's service is fetching the data before this component is created
+    //so in order not to miss the event we init our focused driver
+    this.focusedDriverCheckAndUpdate(this.driversService.chosenDriver);
+    this.driversService.chosenDriverChanged.subscribe((driver) => {
+      this.focusedDriverCheckAndUpdate(driver);
     });
   }
   onCardDelete() {
@@ -35,5 +38,14 @@ export class DriversCardComponent implements OnInit {
   }
   onDriverClicked() {
     this.driversService.setChosenDriver(this.driverId);
+  }
+  private focusedDriverCheckAndUpdate(driver: Driver | undefined) {
+    if (driver === undefined) {
+      this.driverIsFocused = false;
+      return;
+    }
+    driver.id === this.driverId
+      ? (this.driverIsFocused = true)
+      : (this.driverIsFocused = false);
   }
 }

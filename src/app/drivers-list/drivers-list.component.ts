@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Driver } from '../models/driver.model';
-import DatabaseService from '../services/database.service';
 import DriversService from '../services/drivers.service';
 
 @Component({
@@ -10,8 +9,9 @@ import DriversService from '../services/drivers.service';
 })
 export class DriversListComponent implements OnInit {
   driversList: Driver[];
+
   constructor(private driversService: DriversService) {
-    this.driversList = [];
+    this.driversList = this.driversService.drivers;
   }
 
   ngOnInit(): void {

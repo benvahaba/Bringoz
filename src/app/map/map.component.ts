@@ -30,11 +30,8 @@ export class MapComponent implements OnInit {
         this.lng = driver.location.lng;
         this.tasks = driver.tasks;
         this.zoomLevel = 12;
-        console.log(driver);
       } else {
         this.driverIsFocused = false;
-        console.log(driver);
-        console.log(this.driverIsFocused);
       }
     });
   }
