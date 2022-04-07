@@ -7,6 +7,7 @@ Front-end project displaying a list of drivers on google maps along with thier d
 Inside project path directory, you can run:
 * `npm install`
 * `npm start` or `ng serve`
+* Run on the app on http://localhost:8080/ 
 
 ## Build
 
