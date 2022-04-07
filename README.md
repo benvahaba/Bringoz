@@ -1,8 +1,6 @@
 # Bringoz
-front-end project displaying a list of drivers on google maps along with thier details, current location and tasks location.
+Front-end project displaying a list of drivers on google maps along with thier details, current location and tasks location.
 
-
-### Client  Side
 #### requirements:
 * Angular CLI version 13.3.0.
 
