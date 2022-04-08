@@ -39,9 +39,7 @@ export class DriversCardComponent implements OnInit {
         Validators.email,
       ]),
     });
-    //the driver's service is fetching the data before this component is created
-    //so in order not to miss the event we init our focused driver
-    this.focusedDriverCheckAndUpdate(this.driversService.getFocusedDriver());
+
     this.driversService.focusedDriverChanged.subscribe((driver) => {
       this.focusedDriverCheckAndUpdate(driver);
     });

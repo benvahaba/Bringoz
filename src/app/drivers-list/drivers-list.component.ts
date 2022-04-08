@@ -10,10 +10,7 @@ import DriversService from '../services/drivers.service';
 export class DriversListComponent implements OnInit {
   driversList: Driver[];
 
-  constructor(private driversService: DriversService) {
-    // just in case the service emmited before thos component created
-    this.driversList = this.driversService.getDrivers();
-  }
+  constructor(private driversService: DriversService) {}
 
   ngOnInit(): void {
     // we listen to any changes in the drivers list and updating the DOM accordingly

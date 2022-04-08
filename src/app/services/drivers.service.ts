@@ -2,15 +2,16 @@ import DatabaseService from './database.service';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Driver } from '../models/driver.model';
 import { DriverUpdate } from '../models/updatedDriver.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export default class DriversService {
   //i don't know why but i seems that cant pass the reference to the array so i had to use an emitter
-  private drivers: Driver[];
-  public driversChanged = new EventEmitter<Driver[]>();
+  private drivers: Driver[] = [];
+  public driversChanged = new BehaviorSubject<Driver[]>(this.drivers);
 
   private focusedDriver: Driver;
-  public focusedDriverChanged = new EventEmitter<Driver>();
+  public focusedDriverChanged = new BehaviorSubject<Driver>(undefined);
 
   constructor(private databaseService: DatabaseService) {
     this.drivers = [];
@@ -19,8 +20,8 @@ export default class DriversService {
   private getDriversFromDB() {
     this.databaseService.fetchDrivers().subscribe((driversFromDb) => {
       this.drivers = driversFromDb;
-      this.driversChanged.emit(this.drivers);
 
+      this.driversChanged.next(this.drivers);
       this.setfocusedDriver();
     });
   }
@@ -30,7 +31,7 @@ export default class DriversService {
     //in case user deleted focused driver
     if (this.focusedDriver?.id === id) this.setfocusedDriver();
 
-    this.driversChanged.emit(this.drivers);
+    this.driversChanged.next(this.drivers);
   }
 
   public setfocusedDriver(id?: string): void {
@@ -45,14 +46,9 @@ export default class DriversService {
         : (this.focusedDriver = undefined);
     }
 
-    this.focusedDriverChanged.emit(this.focusedDriver);
+    this.focusedDriverChanged.next(this.focusedDriver);
   }
-  getFocusedDriver(): Driver {
-    return this.focusedDriver;
-  }
-  getDrivers(): Driver[] {
-    return this.drivers;
-  }
+
   editeDriver(driverUpdate: DriverUpdate) {
     this.drivers = this.drivers.map((driver) => {
       if (driver.id === driverUpdate.id) {
@@ -60,7 +56,7 @@ export default class DriversService {
       } else return driver;
     });
 
-    this.driversChanged.emit(this.drivers);
+    this.driversChanged.next(this.drivers);
     this.setfocusedDriver(driverUpdate.id);
   }
 }
