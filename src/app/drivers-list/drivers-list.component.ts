@@ -21,11 +21,4 @@ export class DriversListComponent implements OnInit {
       this.driversList = driversFromService;
     });
   }
-  onCardDelete(driverInfo: { driverId: string; driverName: string }) {
-    //i made it here just incase in the future ill split the Drivers service to the list of
-    //drivers and focused drivers. so in that case the card don't need acces to the entire list
-    if (confirm(`Are you sure to delete ${driverInfo.driverName}`)) {
-      this.driversService.deleteDriverById(driverInfo.driverId);
-    }
-  }
 }

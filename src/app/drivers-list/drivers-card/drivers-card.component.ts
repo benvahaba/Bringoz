@@ -16,11 +16,7 @@ export class DriversCardComponent implements OnInit {
   @Input() i_phone: string = '';
   @Input() i_tasksNum: string = '';
   @Input() i_email: string = '';
-  @Output() delete = new EventEmitter<{
-    // we need the name to display the message and the id for delete
-    driverName: string;
-    driverId: string;
-  }>();
+
   driverIsFocused: boolean = false;
   //controlling the DOM manipulation regarding the buttons we need to display, the edite option and more
   isCardEditable: boolean = false;
@@ -93,10 +89,9 @@ export class DriversCardComponent implements OnInit {
   ////////// click events//////////
   public onCardDelete() {
     //passing to (drivers-list) component
-    this.delete.emit({
-      driverName: this.i_driverName,
-      driverId: this.i_driverId,
-    });
+    if (confirm(`Are you sure to delete ${this.i_driverName}`)) {
+      this.driversService.deleteDriverById(this.i_driverId);
+    }
   }
   public onDriverClicked() {
     //is that a bug or a feature? i don't know. i wanted to give the user the option to
